@@ -503,7 +503,7 @@ static PyObject* CardMask2PyList(CardMask* cardmask)
   int cards[64];
   int i;
 
-  if((i = StdDeck_maskToCards(cardmask, cards)) != cardmask_size) {
+  if((i = CurDeck.maskToCards(cardmask, cards)) != cardmask_size) {
     PyErr_Format(PyExc_RuntimeError, "CardMask2PyList: maskToCards returns %d cards, expected %d\n", i, cardmask_size);
     return 0;
   }
