@@ -1,3 +1,9 @@
+pypoker-eval (124.0-2) unstable; urgency=low
+
+  * relaunch buildd
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sun,  7 Nov 2004 20:52:35 +0100
+
 pypoker-eval (124.0-1) unstable; urgency=low
 
   * poker-eval upstream API change 
