@@ -28,7 +28,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.54)
-AC_INIT(pypoker-eval, 124.0)
+AC_INIT(pypoker-eval, 125.0)
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE()
 AC_CONFIG_SRCDIR([pypokereval.c])
