@@ -1,0 +1,54 @@
+%define ver	@PACKAGE_VERSION@
+%define rel	1
+%define prefix	/usr
+
+Summary:	Python interface to poker hand evaluator library development files
+Name:		pypoker-eval
+Version:	%ver
+Release:	%rel
+Copyright:	GPL
+Source:         %{name}-%{version}.tar.bz2  
+URL:            http://pokersource.sourceforge.net
+Group:		Games/Cards		
+BuildRoot:	/tmp/%{name}-%{version}-%{rel}-root
+Docdir:		%{prefix}/doc
+BuildRequires:  python libpoker-eval-devel
+
+%description
+This package is a free (GPL) toolkit for writing programs which
+simulate or analyze poker games.
+
+%prep
+#%setup -n %{name}-%{version}
+%setup -q -a 0
+
+%build
+# Needed for snapshot releases.
+if [ ! -f configure ]; then
+	if [ ! -f bootstrap ]; then
+	       CFLAGS="$RPM_OPT_FLAGS" autoconf
+        else
+	       ./bootstrap
+	fi
+fi
+
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{prefix}
+
+make 
+
+%install
+[ -d ${RPM_BUILD_ROOT} ] && rm -rf ${RPM_BUILD_ROOT}
+
+make install DESTDIR=${RPM_BUILD_ROOT}
+
+%clean
+(cd ..; rm -rf %{name}-%{version} ${RPM_BUILD_ROOT})
+
+%files
+%defattr(-,root,root)
+%{prefix}/*
+%doc README COPYING NEWS
+
+%changelog
+* Wed Oct 29 2004 Jean-Chtistophe Duberga <jeanchristophe.duber@free.fr>
+- initial spec file for RedHat/Mandrake/... rpm based distributions.

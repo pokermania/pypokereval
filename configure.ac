@@ -52,5 +52,6 @@ CPPFLAGS="$CPPFLAGS $POKER_EVAL_CFLAGS"
 LIBS="$LIBS $POKER_EVAL_LIBS"
 
 # Generate files
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile
+                 pypoker-eval.spec])
 AC_OUTPUT
