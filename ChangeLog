@@ -1,0 +1,24 @@
+Tue Oct 19 16:35:49 2004  Loic Dachary  <loic@gnu.org>
+
+	* Release 122.0
+
+	* Documentation
+
+Sun Sep 19 13:14:34 2004  Loic Dachary  <loic@gnu.org>
+
+  	* pypokereval.c (eval_hand): wrongly picked 3 cards from hole
+	  cards in omaha8. Reworked the function.
+	
+	  https://gna.org/bugs/index.php?func=detailitem&item_id=735
+	
+	* pypokereval.c (CardMask2SortedPyList): add missing STFLUSH case.
+	  https://gna.org/bugs/index.php?func=detailitem&item_id=735
+	
+Fri Jul 23 17:18:16 2004  Loic Dachary  <loic@gnu.org>
+
+	* pypokereval.c: Py_DECREF where appropriate
+
+Sat Feb 21 12:56:11 2004  Loic Dachary  <loic@gnu.org>
+
+	* Initial revision
+

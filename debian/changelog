@@ -1,0 +1,162 @@
+pypoker-eval (124.0-1) unstable; urgency=low
+
+  * poker-eval upstream API change 
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sun,  7 Nov 2004 16:30:26 +0100
+
+pypoker-eval (122.0-5) unstable; urgency=low
+
+  * Re-launch buildd.
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Mon, 25 Oct 2004 13:11:40 +0200
+
+pypoker-eval (122.0-4) unstable; urgency=low
+
+  * Fullfill ITP (Closes: #277330)
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 20 Oct 2004 00:04:59 +0200
+
+pypoker-eval (122.0-3) unstable; urgency=low
+
+  * missing documentation
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 19 Oct 2004 23:53:26 +0200
+
+pypoker-eval (122.0-2) unstable; urgency=low
+
+  * missing dependency on python in addition to python2.3
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 19 Oct 2004 16:34:38 +0200
+
+pypoker-eval (122.0-1) unstable; urgency=low
+
+  * Sync with poker-eval distribution
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 19 Oct 2004 12:42:43 +0200
+
+pypoker-eval (121.0-21) unstable; urgency=low
+
+  * lowbal eval conflict with omaha8
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 22 Sept 2004 17:09:32 +0200
+
+pypoker-eval (121.0-20) unstable; urgency=low
+
+  * missing hand initialization
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sun, 21 Sept 2004 17:09:32 +0200
+
+pypoker-eval (121.0-19) unstable; urgency=low
+
+  * missing STFLUSH in best hand build
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sun, 19 Sept 2004 17:09:32 +0200
+
+pypoker-eval (121.0-18) unstable; urgency=low
+
+  * leak reduction
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Fri, 23 Jul 2004 17:09:32 +0200
+
+pypoker-eval (121.0-17) unstable; urgency=low
+
+  * strong dependencies
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sun,  4 Jul 2004 17:35:21 +0200
+
+pypoker-eval (121.0-16) unstable; urgency=low
+
+  * stud 7 eval
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Thu, 29 Apr 2004 14:26:02 +0200
+
+pypoker-eval (121.0-15) unstable; urgency=low
+
+  * fill pockets if at least one placeholder
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 28 Apr 2004 18:46:43 +0200
+
+pypoker-eval (121.0-14) unstable; urgency=low
+
+  * evaln interface
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 28 Apr 2004 14:57:20 +0200
+
+pypoker-eval (121.0-13) unstable; urgency=low
+
+  * card count bug
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Mon, 19 Apr 2004 21:08:44 +0200
+
+pypoker-eval (121.0-12) unstable; urgency=low
+
+  * workaround portability hack
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Fri, 16 Apr 2004 15:15:12 +0200
+
+pypoker-eval (121.0-11) unstable; urgency=low
+
+  * fill pockets
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 14 Apr 2004 14:30:33 +0200
+
+pypoker-eval (121.0-10) unstable; urgency=low
+
+  * tuples accepted
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Fri,  2 Apr 2004 23:39:34 +0200
+
+pypoker-eval (121.0-9) unstable; urgency=low
+
+  * enumerate for all games
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Mon, 29 Mar 2004 20:15:36 +0200
+
+pypoker-eval (121.0-8) unstable; urgency=low
+
+  * added autoconf and automake to dep's list
+
+ -- Henry Precheur <henry@precheur.org>  Tue, 23 Mar 2004 17:42:48 +0100
+
+pypoker-eval (121.0-7) unstable; urgency=low
+
+  * variable length hand fix
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 23 Mar 2004 11:41:09 +0100
+
+pypoker-eval (121.0-6) unstable; urgency=low
+
+  * portability
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Mon, 22 Mar 2004 11:17:32 +0100
+
+pypoker-eval (121.0-5) unstable; urgency=low
+
+  * check numerical card range
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Thu, 18 Mar 2004 12:47:00 +0100
+
+pypoker-eval (121.0-4) unstable; urgency=low
+
+  * sorted straights
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Thu, 11 Mar 2004 22:23:53 +0100
+
+pypoker-eval (121.0-3) unstable; urgency=low
+
+  * sorted hands
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Thu, 11 Mar 2004 16:56:12 +0100
+
+pypoker-eval (121.0-2) unstable; urgency=low
+
+  * config.h update
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 25 Feb 2004 23:10:13 +0100
+
+pypoker-eval (121.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sat, 21 Feb 2004 13:35:33 +0100
+
