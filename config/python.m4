@@ -92,7 +92,7 @@ else
     PYTHON_LIBS="-L$python_libraries -l$python_lib"
 
     _CPPFLAGS="$CPPFLAGS"
-    CPPFLAGS="$CXXFLAGS ${PYTHON_CFLAGS}"
+    CPPFLAGS="$CFLAGS ${PYTHON_CFLAGS}"
 
     dnl Test the headers
     AC_MSG_CHECKING(for Python headers)
@@ -114,7 +114,7 @@ else
     dnl Test the libraries
     AC_MSG_CHECKING(for Python libraries)
 
-    CPPFLAGS="$CXXFLAGS $PYTHON_CFLAGS"
+    CPPFLAGS="$CFLAGS $PYTHON_CFLAGS"
 
     AC_TRY_LINK( , , have_python_libraries="yes", have_python_libraries="no")
 

@@ -24,6 +24,8 @@
 #  Loic Dachary <loic@gnu.org>
 #
 # 
+ACLOCAL_AMFLAGS = -I config
+
 MAINTAINERCLEANFILES = \
 	INSTALL \
 	py-compile \

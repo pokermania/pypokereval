@@ -1,3 +1,11 @@
+Thu Dec 09 18:20:59 2004  Loic Dachary  <loic@gnu.org>
+
+	* Release 126.0
+
+	* pypokereval.c (CardMask2PyList): must not use implicit StdDeck_maskToCard. Use CurDeck instead.
+
+	* configure.ac: add warnings
+
 Mon Dec 06 18:40:29 2004  Loic Dachary  <loic@gnu.org>
 
 	* Release 125.0
