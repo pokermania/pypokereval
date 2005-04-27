@@ -1,6 +1,18 @@
-Thu Dec 09 18:20:59 2004  Loic Dachary  <loic@gnu.org>
+Wed Apr 27 17:47:45 2005  Loic Dachary  <loic@gnu.org>
+
+	* Release 127.0
+
+	* pypokereval.c: use COMBINATIONS instead of PERMUTATIONS when
+	  enumerating unknown cards.
+
+Fri Dec 10 11:49:26 2004  Loic Dachary  <loic@gnu.org>
 
 	* Release 126.0
+
+	* pokereval.py (winners): fill_pockets is set => fill_pockets is not set. iteration
+	  is infinite by default, not 1.
+
+Thu Dec 09 18:20:59 2004  Loic Dachary  <loic@gnu.org>
 
 	* pypokereval.c (CardMask2PyList): must not use implicit StdDeck_maskToCard. Use CurDeck instead.
 

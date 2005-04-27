@@ -137,7 +137,7 @@
             potfrac += hipot;						\
             if (hishare == 1)						\
               result->nwinhi[i]++;					\
-            else							\
+             else							\
               result->ntiehi[i]++;					\
           } else {							\
             result->nlosehi[i]++;					\
@@ -306,7 +306,7 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
 
   if (game == game_holdem) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_ANY_HIGH);
     } else {
@@ -314,7 +314,7 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
     }
   } else if (game == game_holdem8) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_ANY_HILO);
     } else {
@@ -322,7 +322,7 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
     }
   } else if (game == game_omaha) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_OMAHA);
     } else {
@@ -330,7 +330,7 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
     }
   } else if (game == game_omaha8) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_OMAHA8);
     } else {
@@ -338,7 +338,7 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
     }
   } else if (game == game_7stud) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_ANY_HIGH);
     } else {
@@ -346,22 +346,22 @@ pyenumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
     }
   } else if (game == game_7stud8) {
     if(totalToDeal > 0) {
-      DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+      DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
 				    sizeToDeal, numToDeal,
 				    dead, INNER_LOOP_ANY_HILO);
     } else {
       INNER_LOOP_ANY_HILO;
     }
   } else if (game == game_7studnsq) {
-    DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+    DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
                                   sizeToDeal, numToDeal,
                                   dead, INNER_LOOP_7STUDNSQ);
   } else if (game == game_razz) {
-    DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+    DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
                                   sizeToDeal, numToDeal,
                                   dead, INNER_LOOP_RAZZ);
   } else if (game == game_lowball27) {
-    DECK_ENUMERATE_PERMUTATIONS_D(StdDeck, cardsDealt,
+    DECK_ENUMERATE_COMBINATIONS_D(StdDeck, cardsDealt,
                                   sizeToDeal, numToDeal,
                                   dead, INNER_LOOP_LOWBALL27);
   } else {

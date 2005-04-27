@@ -62,11 +62,11 @@ knowing if a given card is taken from the board or not is significant
 (such as Omaha).
 
 A list is returned. The first element is the numerical value
-of the hand (better hands have higher values in if "side" is "hi" and
+of the hand (better hands have higher values if "side" is "hi" and
 lower values if "side" is "low"). The second element is a list whose
 first element is the strength of the hand among the following:
 
-Nothing (may only occur if "side" equals "low")
+Nothing (only if "side" equals "low")
 NoPair
 TwoPair
 Trips
@@ -77,7 +77,7 @@ Quads
 StFlush
 
 The last five elements are numbers describing the best hand properly
-sorted (for instance the ace is at the end for no pair if"side" is low or
+sorted (for instance the ace is at the end for no pair if "side" is low or
 at the beginning if "side" high).
 
 Examples:
@@ -205,7 +205,7 @@ iterations: the maximum number of iterations when exploring the
             keywords arguments, i.e. 255 or __). If the number of
             iterations is not specified and there are place holders,
             the return value cannot be predicted.
-            Default: 1
+            Default: +infinite (i.e. exhaustive exploration)
 
 Example: object.poker_eval(game = "holdem",
                            pockets = [ ["tc", "ac"],  ["3h", "ah"],  ["8c", "6h"]],

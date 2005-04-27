@@ -52,7 +52,7 @@ pkgpyexec_LTLIBRARIES      = \
 pypokereval_la_SOURCES = pypokereval.c
 pypokereval_la_LDFLAGS = -module
 
-EXTRA_DIST = bootstrap config/python.m4 test.py
+EXTRA_DIST = bootstrap config/python.m4 test.py pypoker-eval.vcproj
 
 # The python interpreter needs to find the binary modules in the
 # current directory and is using a search mechanism (based on

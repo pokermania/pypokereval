@@ -1,3 +1,9 @@
+pypoker-eval (127.0-1) unstable; urgency=low
+
+  * upstream sync
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 27 Apr 2005 14:46:50 +0200
+
 pypoker-eval (126.0-1) unstable; urgency=low
 
   * upstream sync

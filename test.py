@@ -60,6 +60,9 @@ print "winners = %s\n" % pokereval.winners(game = "holdem", pockets = [ ["tc", "
 
 print "winners (filthy pockets) = %s\n" % pokereval.winners(game = "holdem", pockets = [ ["tc", "ac", 255],  [], [255, 255], ["th", "ah"],  ["8c", "6h"]], dead = [], board = ["7h", "3s", "2c", "7s", "7d"])
 
+print "winners omaha = %s\n" % pokereval.winners(game = "omaha", pockets = [ ["tc", "ac", "ks", "kc" ],  ["th", "ah", "qs", "qc" ],  ["8c", "6h", "js", "jc" ]], dead = [], board = ["7h", "3s", "2c", "7s", "7d"])
+print "winners omaha8 = %s\n" % pokereval.winners(game = "omaha8", pockets = [ ["tc", "ac", "ks", "kc" ],  ["th", "ah", "qs", "qc" ],  ["8c", "6h", "js", "jc" ]], dead = [], board = ["7h", "3s", "2c", "7s", "7d"])
+
 hand = ["Ac", "As", "Td", "7s", "7h", "3s", "2c"]
 best_hand = pokereval.best_hand("hi", hand)
 print "best hand from %s = %s" % ( hand, pokereval.best_hand("hi", hand) )
@@ -136,7 +139,10 @@ best_hand = pokereval.best_hand("low", hand, board)
 print "6/ low hand from %s / %s = %s" % ( hand, board, pokereval.best("low", hand, board) )
 print "best low hand from %s / %s = (%s) %s " % (hand, board, best_hand[0], [ pokereval.card2string(i) for i in best_hand[1:] ])
 
-if len(sys.argv) < 1:
+if len(sys.argv) > 2:
+
+    print "f0 result = %s\n" % pokereval.poker_eval(game = "holdem", fill_pockets = 1, pockets = [ ["As", "3s"],  ["__", "__"],  ["__", "__"]], dead = [], board = ["__", "Qs", "2c", "Ac", "Kc"])
+
     print ""
     print "f1 result = %s\n" % pokereval.poker_eval(game = "holdem", fill_pockets = 1, pockets = [ ["As", "3s"],  ["__", "__"],  ["__", "__"]], dead = [], board = ["7s", "Qs", "2c", "Ac", "Kc"])
 
