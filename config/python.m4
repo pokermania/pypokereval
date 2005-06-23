@@ -13,12 +13,12 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 # =========================================================================
 # AM_CC_PYTHON : Python checking macros
 
-AC_DEFUN(AM_CC_PYTHON,
+AC_DEFUN([AM_CC_PYTHON],
 [ python_version_required="$1"
 
 is_mandatory="$2"
@@ -94,22 +94,11 @@ else
     _CPPFLAGS="$CPPFLAGS"
     CPPFLAGS="$CFLAGS ${PYTHON_CFLAGS}"
 
-    dnl Test the headers
-    AC_MSG_CHECKING(for Python headers)
+    AC_MSG_NOTICE([Searching python includes in $python_includes])
 
-    AC_EGREP_CPP( yo_python,
-    [#include <Python.h>
-   yo_python
-    ],
+    AC_CHECK_HEADER([Python.h],
       have_python_headers="yes",
       have_python_headers="no" )
-
-    if test "$have_python_headers" = "yes"
-    then
-        AC_MSG_RESULT([$python_includes])
-    else
-        AC_MSG_RESULT(no)
-    fi
 
     dnl Test the libraries
     AC_MSG_CHECKING(for Python libraries)
