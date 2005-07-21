@@ -60,7 +60,7 @@ EXTRA_DIST = bootstrap config/python.m4 test.py pypoker-eval.vcproj
 # .libs
 #
 all-local:
-	rm -f *.so ; ln -s .libs/*.so .
+	-rm -f *.so ; ln -s .libs/*.so .
 
 clean-local:
 	rm -f *.so *.pyc
