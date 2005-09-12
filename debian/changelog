@@ -1,3 +1,16 @@
+pypoker-eval (128.0-1) unstable; urgency=low
+
+  * upstream sync
+
+ -- Ludovic Heyberber (gorila) <heyber.l@gmail.com>  Mon, 12 Sep 2005 11:21:26 +0200
+
+pypoker-eval (127.0-2) unstable; urgency=low
+
+  * force python 2.3
+  * update copyright url
+
+ -- Ludovic Heyberber (gorila) <heyber.l@gmail.com>  Thu,  8 Sep 2005 13:45:53 +0200
+
 pypoker-eval (127.0-1) unstable; urgency=low
 
   * upstream sync

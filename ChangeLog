@@ -1,3 +1,9 @@
+Mon Sep 12 2005  Ludovic Heyberger  <heyber.l@gmail.com>
+
+ 	* Release 128.0
+
+	* config/python.m4: add version constraint
+	
 Thu Jun 23 19:41:05 2005  Loic Dachary  <loic@gnu.org>
 
 	* config/python.m4: fix bugous header detection

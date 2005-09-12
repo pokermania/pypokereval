@@ -28,7 +28,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.54)
-AC_INIT(pypoker-eval, 127.0)
+AC_INIT(pypoker-eval, 128.0)
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE()
 AC_CONFIG_SRCDIR([pypokereval.c])
@@ -56,7 +56,7 @@ if test "$GCC" = "yes" -a "$ac_test_CFLAGS" != set ; then
   fi
 fi
 
-AM_PATH_PYTHON([2.3])
+AM_PATH_PYTHON([=2.3])
 AM_CC_PYTHON(2.3, yes)
 CPPFLAGS="${CPPFLAGS} ${PYTHON_CFLAGS}"
 LIBS="${LIBS} ${PYTHON_LIBS}"
