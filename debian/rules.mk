@@ -39,7 +39,7 @@ is_debug_package=$(if $(findstring noopt,$(DEB_BUILD_OPTIONS)),yes,)
 
 DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(DEB_DESTDIR)
 
-DEB_CONFIGURE_SCRIPT_ENV = CC="$(CC)" CXX="$(CXX)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" PYTHON_VERSION_CONSTRAINT="=`[[ '$@' =~ 'python([0-9].[0-9])' ]] && echo $${BASH_REMATCH[1]}`" 
+DEB_CONFIGURE_SCRIPT_ENV = CC="$(CC)" CXX="$(CXX)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" PYTHON_VERSION_CONSTRAINT="=`expr '$@' : '.*python\([0-9].[0-9])\'`" 
 DEB_CONFIGURE_NORMAL_ARGS += --srcdir=..
 
 DEB_PYTHON_VERSIONS = 2.3 2.4
