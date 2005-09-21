@@ -52,13 +52,14 @@ $(patsubst %,config.status/%,$(DEB_PACKAGES)):: $(DEB_SRCDIR)/configure
 	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
 	mkdir -p config.status && touch config.status/$(cdbs_curpkg)
 
+$(DEB_SRCDIR)/config.status:: $(DEB_SRCDIR)/configure
+	./configure --enable-maintainer-mode
+
 $(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/bootstrap
 	sh bootstrap
 	chmod a+x $@
 
-clean:: $(DEB_SRCDIR)/configure
-	rm -fr config.status
-	./configure --enable-maintainer-mode
+clean:: $(DEB_SRCDIR)/config.status
 	$(MAKE) maintainer-clean
 
 $(patsubst %,cleanbuilddir/%,$(DEB_PACKAGES))::
