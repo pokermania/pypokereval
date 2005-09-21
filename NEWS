@@ -1,5 +1,7 @@
 * Release 128.0 
 
+Rework build system and packages for distribution on python2.3 and python2.4
+
 Portability fixes.
 
 * Release 126.0 

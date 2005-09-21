@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2004 Mekensleep
+# Copyright (C) 2004, 2005 Mekensleep
 #
 # Mekensleep
 # 24 rue vieille du temple
@@ -18,11 +18,10 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 # Authors:
 #  Loic Dachary <loic@gnu.org>
-#
 # 
 
 # Process this file with autoconf to produce a configure script.
@@ -56,8 +55,12 @@ if test "$GCC" = "yes" -a "$ac_test_CFLAGS" != set ; then
   fi
 fi
 
-AM_PATH_PYTHON([=2.3])
-AM_CC_PYTHON(2.3, yes)
+test x$prefix = xNONE && prefix="$ac_default_prefix"
+
+if test -z "$PYTHON_VERSION_CONSTRAINT" ; then PYTHON_VERSION_CONSTRAINT='>=2.3' ; fi
+
+AM_CC_PYTHON([$PYTHON_VERSION_CONSTRAINT])
+
 CPPFLAGS="${CPPFLAGS} ${PYTHON_CFLAGS}"
 LIBS="${LIBS} ${PYTHON_LIBS}"
 

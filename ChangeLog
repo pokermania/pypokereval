@@ -6,6 +6,12 @@ Mon Sep 12 2005  Ludovic Heyberger  <heyber.l@gmail.com>
 	
 Thu Jun 23 19:41:05 2005  Loic Dachary  <loic@gnu.org>
 
+	* Release 128.0
+	
+	* configure.ac: strict selection of python interpreter is allowed
+	
+	* config/ccpython.m4: rebuild from scratch
+	
 	* config/python.m4: fix bugous header detection
 
 Wed Apr 27 17:47:45 2005  Loic Dachary  <loic@gnu.org>
