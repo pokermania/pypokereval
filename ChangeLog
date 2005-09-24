@@ -1,6 +1,10 @@
-Wed Sep 21 2005  Loic Dachary  <loic@gnu.org>
+Thu Sep 22 2005  Loic Dachary  <loic@gnu.org>
 
 	* Release 128.0
+
+	* Makefile.am (pkgconfig_DATA): pypoker-eval.pc
+
+Wed Sep 21 2005  Loic Dachary  <loic@gnu.org>
 
 	* bootstrap: upgrade
 	

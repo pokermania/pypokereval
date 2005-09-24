@@ -39,6 +39,8 @@ AC_LANG(C)
 AC_PROG_CPP
 AC_PROG_LIBTOOL
 
+AM_MAINTAINER_MODE
+
 # Check for python
 #
 # GCC specific debug and optimization flags
@@ -56,12 +58,24 @@ if test "$GCC" = "yes" -a "$ac_test_CFLAGS" != set ; then
 fi
 
 test x$prefix = xNONE && prefix="$ac_default_prefix"
+test x$exec_prefix = xNONE && exec_prefix="$prefix"
 
-if test -z "$PYTHON_VERSION_CONSTRAINT" ; then PYTHON_VERSION_CONSTRAINT='>=2.3' ; fi
+DEFAULT_PYTHON_VERSION_CONSTRAINT='>=2.3'
+if test -z "$PYTHON_VERSION_CONSTRAINT" ; then PYTHON_VERSION_CONSTRAINT="$DEFAULT_PYTHON_VERSION_CONSTRAINT" ; fi
 
+m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.4 python2.3 python])
 AM_CC_PYTHON([$PYTHON_VERSION_CONSTRAINT])
+eval pythonpath=$pythondir
+if eval test "$pythondir" != "$pyexecdir" ; then
+   eval pythonpath=$pythonpath:$pyexecdir
+fi
+AC_SUBST(pythonpath, [$pythonpath])
 
-AM_MAINTAINER_MODE
+if test "$PYTHON_VERSION_CONSTRAINT" != "$DEFAULT_PYTHON_VERSION_CONSTRAINT" ; then
+   MAYBE_PYTHON_VERSION=$PYTHON_VERSION
+fi
+
+AC_SUBST(MAYBE_PYTHON_VERSION, [$MAYBE_PYTHON_VERSION])
 
 CPPFLAGS="${CPPFLAGS} ${PYTHON_CFLAGS}"
 LIBS="${LIBS} ${PYTHON_LIBS}"
@@ -73,5 +87,6 @@ LIBS="$LIBS $POKER_EVAL_LIBS"
 
 # Generate files
 AC_CONFIG_FILES([Makefile
+                 pypoker-eval.pc
                  pypoker-eval.spec])
 AC_OUTPUT

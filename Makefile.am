@@ -52,6 +52,9 @@ pkgpyexec_LTLIBRARIES      = \
 pypokereval_la_SOURCES = pypokereval.c
 pypokereval_la_LDFLAGS = -module
 
+pkgconfigdir = ${libdir}/pkgconfig
+pkgconfig_DATA = pypoker-eval.pc
+
 EXTRA_DIST = bootstrap config/python.m4 config/ccpython.m4 test.py pypoker-eval.vcproj
 
 # The python interpreter needs to find the binary modules in the
@@ -65,3 +68,7 @@ all-local:
 clean-local:
 	rm -f *.so *.pyc
 
+install-data-hook:
+	if [ "${MAYBE_PYTHON_VERSION}" ] ; then \
+		cp ${DESTDIR}${pkgconfigdir}/pypoker-eval.pc ${DESTDIR}${pkgconfigdir}/pypoker-eval${MAYBE_PYTHON_VERSION}.pc ; \
+	fi

@@ -1,0 +1,2 @@
+debian/tmp/usr/lib/python@PYTHON_VERSION@
+debian/tmp/usr/lib/pkgconfig/pypoker-eval@PYTHON_VERSION@.pc
