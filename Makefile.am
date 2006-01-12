@@ -50,7 +50,7 @@ pkgpyexec_LTLIBRARIES      = \
 	pypokereval.la
 
 pypokereval_la_SOURCES = pypokereval.c
-pypokereval_la_LDFLAGS = -module
+pypokereval_la_LDFLAGS = -module -no-undefined
 
 pkgconfigdir = ${libdir}/pkgconfig
 pkgconfig_DATA = pypoker-eval.pc
@@ -63,7 +63,11 @@ EXTRA_DIST = bootstrap config/python.m4 config/ccpython.m4 test.py pypoker-eval.
 # .libs
 #
 all-local:
-	-rm -f *.so ; ln -s .libs/*.so .
+	if [ -f .libs/*.so ] ; then \
+		rm -f *.so ; ln -s .libs/*.so . ; \
+	else \
+		rm -f *.dll ; ln -s .libs/*.dll pypokereval.dll ; \
+	fi
 
 clean-local:
 	rm -f *.so *.pyc
@@ -71,4 +75,12 @@ clean-local:
 install-data-hook:
 	if [ "${MAYBE_PYTHON_VERSION}" ] ; then \
 		cp ${DESTDIR}${pkgconfigdir}/pypoker-eval.pc ${DESTDIR}${pkgconfigdir}/pypoker-eval${MAYBE_PYTHON_VERSION}.pc ; \
+	fi
+
+install-exec-local:
+	if [ -f pypokereval.dll ] ; then \
+		cp pypokereval.dll ${pyexecdir} ; \
+	fi
+	if [ -f pypokereval.so ] ; then \
+		cp pypokereval.so ${pyexecdir} ; \
 	fi
