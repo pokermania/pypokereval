@@ -37,8 +37,16 @@ AC_CACHE_CHECK([for $am_display_PYTHON C libraries directory],
 
 AC_CACHE_CHECK([for $am_display_PYTHON link flags],
     [am_cv_python_linkflags],
-    [am_cv_python_linkflags=`$PYTHON -c "from distutils import sysconfig; print sysconfig.get_config_var('BLDLIBRARY')" 2>/dev/null ||
-     echo "$PYTHON_PREFIX/lib/python$PYTHON_VERSION/config"`])
+    [
+case $build_os in
+  cygwin* | mingw*)
+	am_cv_python_linkflags='-lpython2.4' ;;
+  *)
+	am_cv_python_linkflags=`$PYTHON -c "from distutils import sysconfig; print sysconfig.get_config_var('BLDLIBRARY')" 2>/dev/null || echo "$PYTHON_PREFIX/lib/python$PYTHON_VERSION/config"`
+	;;
+esac
+	
+])
   AC_SUBST([pythonlinkflags], [$am_cv_python_linkflags])
 
 PYTHON_CFLAGS="-I$pythonincludedir"
