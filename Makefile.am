@@ -78,6 +78,7 @@ install-data-hook:
 	fi
 
 install-exec-local:
+	mkdir -p ${pyexecdir}
 	if [ -f pypokereval.dll ] ; then \
 		cp pypokereval.dll ${pyexecdir} ; \
 	fi
