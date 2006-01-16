@@ -1,3 +1,9 @@
+pypoker-eval (129.0-1) unstable; urgency=low
+
+  * upstream sync
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Mon, 16 Jan 2006 17:13:24 +0100
+
 pypoker-eval (128.0-1) unstable; urgency=low
 
   * switch to cdbs
