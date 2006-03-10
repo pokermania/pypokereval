@@ -1,6 +1,10 @@
-Mon Jan 16 2006  Loic Dachary  <loic@gnu.org>
+Fri Mar 10 2006  Loic Dachary  <loic@gnu.org>
 
 	* Release 129.0
+
+	* python2.2 support for redhat9 (https://sourceforge.net/tracker/index.php?func=detail&aid=1428078&group_id=13546&atid=213546)
+
+Mon Jan 16 2006  Loic Dachary  <loic@gnu.org>
 
 	* cygwin portability fixes
 
