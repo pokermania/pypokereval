@@ -57,6 +57,7 @@ pkgconfig_DATA = pypoker-eval.pc
 
 EXTRA_DIST = bootstrap config/python.m4 config/ccpython.m4 test.py pypoker-eval.vcproj
 
+#
 # The python interpreter needs to find the binary modules in the
 # current directory and is using a search mechanism (based on
 # PYTHONPATH) that can't cope with a directory hierarchy including a
@@ -70,7 +71,7 @@ all-local:
 	fi
 
 clean-local:
-	rm -f *.so *.pyc
+	rm -f *.so *.dll *.pyc
 
 install-data-hook:
 	if [ "${MAYBE_PYTHON_VERSION}" ] ; then \

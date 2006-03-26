@@ -1,5 +1,7 @@
 * Release 131.0 
 
+Minor compilation fixes.
+
 * Release 130.0 
 
 Portability fixes (python2.2, redhat).

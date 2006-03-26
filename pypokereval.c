@@ -496,6 +496,7 @@ static int PyList2CardMask(PyObject* object, CardMask* cardsp)
   return valid_cards_size;
 }
 
+#if 0
 static PyObject* CardMask2PyList(CardMask* cardmask)
 {
   PyObject* result = 0;
@@ -518,6 +519,7 @@ static PyObject* CardMask2PyList(CardMask* cardmask)
 
   return result;
 }
+#endif
 
 static char doc_poker_evaln[] =
 "EvalN";
@@ -855,8 +857,8 @@ eval_hand(PyObject* self, PyObject *args)
   if(board_size > 0) {
     CardMask hicards;
     CardMask locards;
-    HandVal  hival;
-    HandVal  loval;
+    HandVal  hival = 0;
+    HandVal  loval = 0;
     StdDeck_CardMask_RESET(hicards);
     StdDeck_CardMask_RESET(locards);
     OmahaHiLow8_Best(hand, board, &hival, &loval, &hicards, &locards);
