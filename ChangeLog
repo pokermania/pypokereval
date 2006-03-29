@@ -1,6 +1,10 @@
-Mon Mar 13 2006  Loic Dachary  <loic@gnu.org>
+Wed Mar 29 2006  Loic Dachary  <loic@gnu.org>
 
 	* Release 131.0
+
+	* Makefile.am (EXTRA_DIST): gentoo files
+
+Mon Mar 13 2006  Loic Dachary  <loic@gnu.org>
 
 	* pypokereval.c: kill compilation warnings
 

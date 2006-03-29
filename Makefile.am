@@ -39,7 +39,8 @@ MAINTAINERCLEANFILES = \
 	install-sh \
 	ltmain.sh \
 	missing \
-	mkinstalldirs
+	mkinstalldirs \
+	$(wildcard gentoo/dev-games/pypoker-eval/*.ebuild)
 
 pythondir = ${pyexecdir}
 python_PYTHON = \
