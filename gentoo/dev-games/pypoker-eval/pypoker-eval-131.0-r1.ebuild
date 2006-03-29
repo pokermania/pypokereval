@@ -13,7 +13,7 @@ LICENSE="GPL-2.1"
 KEYWORDS="x86"
 IUSE=""
 
-DEPEND="poker-eval python"
+DEPEND="poker-eval virtual/python"
 
 src_unpack() {
 	unpack ${MY_P}
@@ -26,6 +26,7 @@ src_unpack() {
 	fi
 }
 
-src_install() {
-	einstall INST_LOCATION="${D}/usr" || die "einstall failed"
+
+src_install () {
+	make install DESTDIR=${D} || die "einstall failed"
 }
