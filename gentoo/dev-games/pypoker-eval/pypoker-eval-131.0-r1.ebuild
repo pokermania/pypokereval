@@ -5,7 +5,7 @@
 inherit eutils
 
 DESCRIPTION="python binding for poker-eval"
-HOMEPAGE="http://sourceforge.net/projects/pokersource"
+HOMEPAGE="http://gna.org/projects/pokersource"
 MY_P="${PN}_${PV}.orig.tar.gz"
 SRC_URI="http://mekensleep.org/gnulinux/gentoo/distfiles/${MY_P}"
 SLOT="0"
