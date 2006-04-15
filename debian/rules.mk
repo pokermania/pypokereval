@@ -59,8 +59,8 @@ $(patsubst %,config-status/%,$(DEB_PACKAGES)):: $(DEB_SRCDIR)/configure
 $(DEB_SRCDIR)/config.status:: $(DEB_SRCDIR)/configure
 	./configure --enable-maintainer-mode --disable-python-depends
 
-$(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/bootstrap $(DEB_SRCDIR)/configure.ac
-	sh bootstrap
+$(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/configure.ac
+	autoreconf --install
 	chmod a+x $@
 
 DEB_PYTHON_FILES = $(patsubst debian/python-%,%,$(shell ls debian/python-*{dirs,docs,postinst,install,templates,config,init} 2>/dev/null || echo))

@@ -26,21 +26,8 @@
 # 
 ACLOCAL_AMFLAGS = -I config
 
-MAINTAINERCLEANFILES = \
-	INSTALL \
-	py-compile \
-	Makefile.in \
-	aclocal.m4 \
-	config.guess \
-	config.h.in \
-	config.sub \
-	configure \
-	depcomp \
-	install-sh \
-	ltmain.sh \
-	missing \
-	mkinstalldirs \
-	$(wildcard gentoo/dev-games/pypoker-eval/*.ebuild)
+MAINTAINERCLEANFILES = INSTALL Makefile.in aclocal.m4 configure \
+	$(filter-out %.m4,$(wildcard config/[a-z]*)) 
 
 pythondir = ${pyexecdir}
 python_PYTHON = \
@@ -56,7 +43,9 @@ pypokereval_la_LDFLAGS = -module -no-undefined
 pkgconfigdir = ${libdir}/pkgconfig
 pkgconfig_DATA = pypoker-eval.pc
 
-EXTRA_DIST = bootstrap config/python.m4 config/ccpython.m4 test.py pypoker-eval.vcproj
+EXTRA_DIST = config/python.m4 config/ccpython.m4 \
+	test.py pypoker-eval.vcproj pypoker-eval.sln \
+	$(wildcard gentoo/dev-games/pypoker-eval/*.ebuild)
 
 #
 # The python interpreter needs to find the binary modules in the
@@ -87,3 +76,6 @@ install-exec-local:
 	if [ -f pypokereval.so ] ; then \
 		cp pypokereval.so ${DESTDIR}/${pyexecdir} ; \
 	fi
+
+TESTS_ENVIRONMENT = ${PYTHON}
+TESTS = test.py

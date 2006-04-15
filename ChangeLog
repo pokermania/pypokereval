@@ -1,6 +1,10 @@
-Wed Mar 29 2006  Loic Dachary  <loic@gnu.org>
+Sat Apr 15 2006  Loic Dachary  <loic@gnu.org>
 
 	* Release 131.0
+
+	* configure.ac: get rid of bootstrap + autotools tweaks
+
+Wed Mar 29 2006  Loic Dachary  <loic@gnu.org>
 
 	* Makefile.am (EXTRA_DIST): gentoo files
 
