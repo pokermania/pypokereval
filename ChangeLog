@@ -1,3 +1,41 @@
+2006-07-19  Loic Dachary  <loic@dachary.org>
+
+	* Release 132.0
+
+	* test.py: Look for modules in .libs.
+
+	* pypokereval.c: Module name compilation depend.
+
+	* pypoker-eval.pc.in:
+	Path have to be retrieved from python directly instead of from the .pc
+
+	* pokereval.py: Binary module import depends on python version.
+
+	* debian/control: Obsolete versioned packages
+
+	* debian/compat: *** empty log message ***
+
+	* debian/changelog: 132
+
+	* debian/rules: Depend on pycentral instead of custom made rules
+
+	* configure.ac: Look for all installed python versions.
+
+	* config/python.m4, config/ccpython.m4:
+	Generate versioned variables for every python development environment available.
+
+	* README: more explicit title
+
+	* NEWS: 132
+
+	* Makefile.am:
+	The module is compiled for every available python development environment. No need for post install tweaks.
+
+2006-07-19  Loic Dachary  <loic@dachary.org>
+
+	* configure.ac: compile for 2.5, 2.4 and 2.3 python versions, rename all
+	  shared libs.
+
 Fri Jun 09 2006  Cedric Pinson  <cpinson@freesheep.org>
 
 	* Release 131.0
