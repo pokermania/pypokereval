@@ -1,7 +1,32 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-include debian/rules.mk
+export DH_VERBOSE=1 
 
-DEB_BUILDDIR_python2.3-pypoker-eval := python2.3-pypoker-eval
-DEB_BUILDDIR_python2.4-pypoker-eval := python2.4-pypoker-eval
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+clean:: $(DEB_BUILDDIR)/config.status
+	rm -f $(DEB_SRCDIR)/*cdbs-*
+
+include /usr/share/cdbs/1/class/autotools.mk
+
+ifneq (ccache,$(findstring ccache,$(DEB_BUILD_OPTIONS)))
+        DEB_CONFIGURE_EXTRA_FLAGS += --without-ccache
+endif
+
+DEB_MAKE_CLEAN_TARGET = maintainer-clean
+
+is_debug_package=$(if $(findstring noopt,$(DEB_BUILD_OPTIONS)),yes,)
+
+$(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/configure.ac
+	autoreconf --install
+	chmod a+x $@
+
+# override in order to add dependency to configure (should be a :: rule instead of a : rule)
+$(DEB_BUILDDIR)/config.status: $(DEB_SRCDIR)/configure
+	chmod a+x $(DEB_CONFIGURE_SCRIPT)
+	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
+
+binary-install/python-pypoker-eval::
+	dh_pycentral -ppython-pypoker-eval
+	dh_python -ppython-pypoker-eval
