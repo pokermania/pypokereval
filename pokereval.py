@@ -24,7 +24,9 @@
 #  Loic Dachary <loic@gnu.org>
 #
 # 
-import pypokereval
+import sys
+_pokereval = __import__('_pokereval_' + sys.version[0] + '_' + sys.version[2])
+
 from types import *
 
 class PokerEval:
@@ -87,7 +89,7 @@ Examples:
 [268435455, ['Nothing']] means there is no qualifying low
 """
         if len(hand + board) >= 5:
-            return pypokereval.eval_hand(side, hand, board)
+            return _pokereval.eval_hand(side, hand, board)
         else:
             return False
 
@@ -99,7 +101,7 @@ listed in "hand" and, optionaly, board. The "side" may be "hi" or
 by the "best" method.
 """
         if len(hand + board) >= 5:
-            return pypokereval.eval_hand(side, hand, board)[1]
+            return _pokereval.eval_hand(side, hand, board)[1]
         else:
             return False
 
@@ -111,7 +113,7 @@ listed in "hand" and, optionaly, board. The "side" may be "hi" or
 by the "best" method.
 """
         if len(hand + board) >= 5:
-            return pypokereval.eval_hand(side, hand, board)[0]
+            return _pokereval.eval_hand(side, hand, board)[0]
         else:
             return False
 
@@ -121,7 +123,7 @@ Call the poker-eval Hand_EVAL_N function with the "cards" argument.
 Return the strength of the "cards" as a number. The higher the
 better.
 """
-        return pypokereval.evaln(cards)
+        return _pokereval.evaln(cards)
     
     def winners(self, *args, **kwargs):
         """\
@@ -155,7 +157,7 @@ pocket (i.e. []).
                 normalized_index += 1
         kwargs["pockets"] = normalized_pockets
         
-        results = pypokereval.poker_eval(*args, **kwargs)
+        results = _pokereval.poker_eval(*args, **kwargs)
 
         (count, haslopot, hashipot) = results.pop(0)
         winners = { 'low': [], 'hi': [] }
@@ -234,9 +236,8 @@ It should be clear that if there is only one sample (i.e. because all the
 cards are known which is the situation that occurs at showdown) the details
 provided by the 'eval' entry is mostly irrelevant and the caller might
 prefer to call the winners method instead.
-
 """
-        result = pypokereval.poker_eval(*args, **kwargs)
+        result = _pokereval.poker_eval(*args, **kwargs)
         return {
             'info': result[0],
             'eval': [ { 'scoop': x[0],
@@ -250,7 +251,7 @@ prefer to call the winners method instead.
             }
 
     def deck(self):
-        """"\
+        """\
 Return the list of all cards in the deck.
 """
         return [ self.string2card(i + j) for i in "23456789TJQKA" for j in "hdcs" ]
@@ -283,9 +284,9 @@ is returned or a string in which case the corresponding number is
 returned.
 """
         if type(cards) is ListType or type(cards) is TupleType:
-            return [ pypokereval.string2card(card) for card in cards ]
+            return [ _pokereval.string2card(card) for card in cards ]
         else:
-            return pypokereval.string2card(cards)
+            return _pokereval.string2card(cards)
 
     def card2string(self, cards):
         """\
@@ -311,7 +312,7 @@ is returned or an integer in which case the corresponding string is
 returned.
 """
         if type(cards) is ListType or type(cards) is TupleType:
-            return [ pypokereval.card2string(card) for card in cards ]
+            return [ _pokereval.card2string(card) for card in cards ]
         else:
-            return pypokereval.card2string(cards)
+            return _pokereval.card2string(cards)
         
