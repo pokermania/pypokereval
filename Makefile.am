@@ -33,12 +33,29 @@ pythondir = ${pyexecdir}
 python_PYTHON = \
 	pokereval.py
 
-pkgpyexecdir=${pyexecdir}
-pkgpyexec_LTLIBRARIES      = \
-	pypokereval.la
+if PYTHON_2_5
+py2_5exec_LTLIBRARIES = _pokereval_2_5.la
+_pokereval_2_5_la_SOURCES = pypokereval.c
+_pokereval_2_5_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
+_pokereval_2_5_la_LIBADD = ${PYTHON2_5_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_5_la_CFLAGS = ${PYTHON2_5_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_5\" -D'VERSION_NAME(w)=w\#\#2_5'
+endif
 
-pypokereval_la_SOURCES = pypokereval.c
-pypokereval_la_LDFLAGS = -module -no-undefined
+if PYTHON_2_4
+py2_4exec_LTLIBRARIES = _pokereval_2_4.la
+_pokereval_2_4_la_SOURCES = pypokereval.c
+_pokereval_2_4_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
+_pokereval_2_4_la_LIBADD = ${PYTHON2_4_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_4_la_CFLAGS = ${PYTHON2_4_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_4\" -D'VERSION_NAME(w)=w\#\#2_4'
+endif
+
+if PYTHON_2_3
+py2_3exec_LTLIBRARIES = _pokereval_2_3.la
+_pokereval_2_3_la_SOURCES = pypokereval.c
+_pokereval_2_3_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
+_pokereval_2_3_la_LIBADD = ${PYTHON2_3_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_3_la_CFLAGS = ${PYTHON2_3_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_3\" -D'VERSION_NAME(w)=w\#\#2_3'
+endif
 
 pkgconfigdir = ${libdir}/pkgconfig
 pkgconfig_DATA = pypoker-eval.pc
@@ -46,36 +63,6 @@ pkgconfig_DATA = pypoker-eval.pc
 EXTRA_DIST = config/python.m4 config/ccpython.m4 \
 	test.py pypoker-eval.vcproj pypoker-eval.sln \
 	$(wildcard gentoo/dev-games/pypoker-eval/*.ebuild)
-
-#
-# The python interpreter needs to find the binary modules in the
-# current directory and is using a search mechanism (based on
-# PYTHONPATH) that can't cope with a directory hierarchy including a
-# .libs
-#
-all-local:
-	if [ -f .libs/*.so ] ; then \
-		rm -f *.so ; ln -s .libs/*.so . ; \
-	else \
-		rm -f *.dll ; ln -s .libs/*.dll pypokereval.dll ; \
-	fi
-
-clean-local:
-	rm -f *.so *.dll *.pyc
-
-install-data-hook:
-	if [ "${MAYBE_PYTHON_VERSION}" ] ; then \
-		cp ${DESTDIR}${pkgconfigdir}/pypoker-eval.pc ${DESTDIR}${pkgconfigdir}/pypoker-eval${MAYBE_PYTHON_VERSION}.pc ; \
-	fi
-
-install-exec-local:
-	mkdir -p ${DESTDIR}/${pyexecdir}
-	if [ -f pypokereval.dll ] ; then \
-		cp pypokereval.dll ${DESTDIR}/${pyexecdir} ; \
-	fi
-	if [ -f pypokereval.so ] ; then \
-		cp pypokereval.so ${DESTDIR}/${pyexecdir} ; \
-	fi
 
 TESTS_ENVIRONMENT = ${PYTHON}
 TESTS = test.py
