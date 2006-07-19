@@ -27,7 +27,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.54)
-AC_INIT(pypoker-eval, 131.0)
+AC_INIT(pypoker-eval, 132.0)
 AC_CONFIG_AUX_DIR(config)
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE()
@@ -63,33 +63,12 @@ fi
 test x$prefix = xNONE && prefix="$ac_default_prefix"
 test x$exec_prefix = xNONE && exec_prefix="$prefix"
 
-DEFAULT_PYTHON_VERSION_CONSTRAINT='>=2.2'
-if test -z "$PYTHON_VERSION_CONSTRAINT" ; then PYTHON_VERSION_CONSTRAINT="$DEFAULT_PYTHON_VERSION_CONSTRAINT" ; fi
-
-m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.4 python2.3 python2.2 python])
-AM_CC_PYTHON([$PYTHON_VERSION_CONSTRAINT])
-eval pythonpath=$pythondir
-if eval test "$pythondir" != "$pyexecdir" ; then
-   eval pythonpath=$pythonpath:$pyexecdir
-fi
-AC_SUBST(pythonpath, [$pythonpath])
-
-if test "$PYTHON_VERSION_CONSTRAINT" != "$DEFAULT_PYTHON_VERSION_CONSTRAINT" ; then
-   MAYBE_PYTHON_VERSION=$PYTHON_VERSION
-fi
-
-AC_SUBST(MAYBE_PYTHON_VERSION, [$MAYBE_PYTHON_VERSION])
-
-CPPFLAGS="${CPPFLAGS} ${PYTHON_CFLAGS}"
-LIBS="${LIBS} ${PYTHON_LIBS}"
+ALL_CC_PYTHON
 
 # Check for poker-eval
 PKG_CHECK_MODULES(POKER_EVAL, poker-eval >= 124.0)
-CPPFLAGS="$CPPFLAGS $POKER_EVAL_CFLAGS"
-LIBS="$LIBS $POKER_EVAL_LIBS"
 
 # Generate files
 AC_CONFIG_FILES([Makefile
-                 pypoker-eval.pc
-                 pypoker-eval.spec])
+                 pypoker-eval.pc])
 AC_OUTPUT
