@@ -1078,9 +1078,9 @@ static PyMethodDef base_methods[] = {
 extern "C" {
 #endif
 DL_EXPORT(void)
-initpypokereval(void)
+VERSION_NAME(init_pokereval_)(void)
 {
-  Py_InitModule("pypokereval", base_methods);
+  Py_InitModule("_pokereval_" PYTHON_VERSION , base_methods);
 }
 #ifdef __cplusplus
 }
