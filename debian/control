@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Loic Dachary (OuoU) <loic@debian.org>
 Build-Depends: debhelper (>= 5.0.37.2), cdbs, python-central (>= 0.4.17), python-all-dev (>= 2.3.5-11), automake1.7 | automake1.9, libtool, pkg-config, libpoker-eval-dev (>= 124.0)
 XS-Python-Version: >= 2.3, >= 2.4
-Standards-Version: 3.6.2.1
+Standards-Version: 3.7.2
 
 Package: python-pypoker-eval
 Section: libs
