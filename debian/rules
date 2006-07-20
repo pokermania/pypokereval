@@ -28,5 +28,5 @@ $(DEB_BUILDDIR)/config.status: $(DEB_SRCDIR)/configure
 	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
 
 binary-install/python-pypoker-eval::
-	dh_pycentral -ppython-pypoker-eval
+	-dh_pycentral -ppython-pypoker-eval
 	dh_python -ppython-pypoker-eval
