@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-export DH_VERBOSE=1 
+#export DH_VERBOSE=1 
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
@@ -19,7 +19,7 @@ DEB_MAKE_CLEAN_TARGET = maintainer-clean
 is_debug_package=$(if $(findstring noopt,$(DEB_BUILD_OPTIONS)),yes,)
 
 $(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/configure.ac
-	autoreconf --install
+	AUTOMAKE=automake-1.9 ACLOCAL=aclocal-1.9 autoreconf --install
 	chmod a+x $@
 
 # override in order to add dependency to configure (should be a :: rule instead of a : rule)
