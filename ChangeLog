@@ -1,3 +1,13 @@
+2006-09-12  Loic Dachary  <loic@dachary.org>
+
+	* Release 133.0
+
+	* 
+
+	* debian/changelog: edgy & etch control files
+
+	* debian/control.edgy, debian/control.etch: edgy & etch
+
 2006-07-19  Loic Dachary  <loic@dachary.org>
 
 	* Release 132.0

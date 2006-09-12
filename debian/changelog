@@ -1,8 +1,10 @@
-pypoker-eval (132.0-2) unstable; urgency=low
+pypoker-eval (133.0-1) unstable; urgency=low
 
   * edgy & etch control files
 
- -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 12 Sep 2006 13:56:21 +0200
+  * upstream sync
+
+ -- Loic Dachary (OuoU) <loic@debian.org>  Tue, 12 Sep 2006 15:18:07 +0200
 
 pypoker-eval (132.0-1) unstable; urgency=low
 
