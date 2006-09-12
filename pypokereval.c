@@ -62,7 +62,7 @@
 #ifdef WIN32
 #define VERSION_NAME(W) W##2_4
 #define PYTHON_VERSION "2_4"
-#endif
+#endif /* WIN32 */
 
 /* INNER_LOOP is executed in every iteration of the combinatorial enumerator
    macros DECK_ENUMERATE_n_CARDS_D() and DECK_ENUMERATE_PERMUTATIONS_D.  It
