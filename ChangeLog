@@ -2,8 +2,6 @@
 
 	* Release 133.0
 
-	* 
-
 	* debian/changelog: edgy & etch control files
 
 	* debian/control.edgy, debian/control.etch: edgy & etch
