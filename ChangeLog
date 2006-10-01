@@ -1,6 +1,10 @@
-2006-09-12  Loic Dachary  <loic@dachary.org>
+2006-10-01  Cedric Pinson  <cpinson@freesheep.org>
 
 	* Release 133.0
+
+	* Update gentoo package
+
+2006-09-12  Loic Dachary  <loic@dachary.org>
 
 	* debian/changelog: edgy & etch control files
 
