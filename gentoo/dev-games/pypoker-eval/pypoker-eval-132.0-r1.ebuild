@@ -13,7 +13,7 @@ LICENSE="GPL-2.1"
 KEYWORDS="x86"
 IUSE=""
 
-DEPEND="poker-eval virtual/python"
+DEPEND="dev-games/poker-eval virtual/python"
 
 src_unpack() {
 	unpack ${MY_P}
