@@ -37,7 +37,7 @@ if PYTHON_2_5
 py2_5exec_LTLIBRARIES = _pokereval_2_5.la
 _pokereval_2_5_la_SOURCES = pypokereval.c
 _pokereval_2_5_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
-_pokereval_2_5_la_LIBADD = ${PYTHON2_5_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_5_la_LIBADD = ${POKER_EVAL_LIBS}
 _pokereval_2_5_la_CFLAGS = ${PYTHON2_5_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_5\" -D'VERSION_NAME(w)=w\#\#2_5'
 endif
 
@@ -45,7 +45,7 @@ if PYTHON_2_4
 py2_4exec_LTLIBRARIES = _pokereval_2_4.la
 _pokereval_2_4_la_SOURCES = pypokereval.c
 _pokereval_2_4_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
-_pokereval_2_4_la_LIBADD = ${PYTHON2_4_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_4_la_LIBADD = ${POKER_EVAL_LIBS}
 _pokereval_2_4_la_CFLAGS = ${PYTHON2_4_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_4\" -D'VERSION_NAME(w)=w\#\#2_4'
 endif
 
@@ -53,7 +53,7 @@ if PYTHON_2_3
 py2_3exec_LTLIBRARIES = _pokereval_2_3.la
 _pokereval_2_3_la_SOURCES = pypokereval.c
 _pokereval_2_3_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
-_pokereval_2_3_la_LIBADD = ${PYTHON2_3_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_3_la_LIBADD = ${POKER_EVAL_LIBS}
 _pokereval_2_3_la_CFLAGS = ${PYTHON2_3_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_3\" -D'VERSION_NAME(w)=w\#\#2_3'
 endif
 
