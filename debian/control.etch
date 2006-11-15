@@ -12,7 +12,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${python:Depends}
 XB-Python-Version: ${python:Versions}
 Provides: ${python:Provides}
-Conflicts: python2.3-pypoker-eval (<< 132.0), python2.4-poker-eval (<< 132.0)
+Conflicts: python2.3-pypoker-eval (<< 132.0), python2.4-pypoker-eval (<< 132.0)
 Description: python interface to poker hand evaluator library development files
  This package is a free (GPL) toolkit for writing programs which
  simulate or analyze poker games.
