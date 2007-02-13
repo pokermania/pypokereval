@@ -63,10 +63,11 @@ if test "$PYTHON" ; then
     PYTHON_LIBS="-L$python]$2[clibdir $python]$2[linkflags"
     
     _CPPFLAGS="$CPPFLAGS"
-    CPPFLAGS="$CFLAGS ${PYTHON_CFLAGS}"
+    CPPFLAGS="$CPPFLAGS ${PYTHON_CFLAGS}"
     
     echo checking python includes in $python]$2[includedir
     
+    unset ac_cv_header_Python_h
     AC_CHECK_HEADER([Python.h],
           have_python_headers="yes",
           have_python_headers="no" )
@@ -119,13 +120,13 @@ AC_DEFUN([ALL_CC_PYTHON],
 [ 
 m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.5 python2.4 python2.3])
 found_one=''
-_ONE_CC_PYTHON([=2.5], [2_5])
+_ONE_CC_PYTHON([=2.3], [2_3])
 if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
 unset PYTHON
 _ONE_CC_PYTHON([=2.4], [2_4])
 if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
 unset PYTHON
-_ONE_CC_PYTHON([=2.3], [2_3])
+_ONE_CC_PYTHON([=2.5], [2_5])
 if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
 PYTHON=$found_one
 if ! test "$found_one" ; then
