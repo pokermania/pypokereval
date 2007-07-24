@@ -36,7 +36,6 @@ if test "$PYTHON" ; then
         [am_cv_python]$2[_includedir=`$PYTHON -c "from distutils import sysconfig; print sysconfig.get_config_var('INCLUDEPY')" 2>/dev/null ||
          echo "$PYTHON_PREFIX/include/python$PYTHON_VERSION"`])
       AC_SUBST([python]$2[includedir], [$am_cv_python]$2[_includedir])
-      AC_SUBST([python]$2[includedir], [$am_cv_python]$2[_includedir])
     
     AC_CACHE_CHECK([for $am_display_PYTHON C libraries directory],
         [am_cv_python]$2[_clibdir],
@@ -47,15 +46,8 @@ if test "$PYTHON" ; then
     AC_CACHE_CHECK([for $am_display_PYTHON link flags],
         [am_cv_python]$2[_linkflags],
         [
-    case $build_os in
-      cygwin* | mingw*)
-            am_cv_python]$2[_linkflags='-lpython2.4' ;;
-      *)
             am_cv_python]$2[_linkflags=`$PYTHON -c "from distutils import sysconfig; print '-L' + sysconfig.get_config_var('LIBPL')" 2>/dev/null || echo "-L$PYTHON_PREFIX/lib/python$PYTHON_VERSION/config"`
             am_cv_python]$2[_linkflags="$am_cv_python]$2[_linkflags -lpython$PYTHON_VERSION"
-            ;;
-    esac
-            
      ])
       AC_SUBST([python]$2[linkflags], [$am_cv_python]$2[_linkflags])
     
@@ -119,15 +111,16 @@ AM_CONDITIONAL([PYTHON_]$2, [test "$have_python" != "no"])
 AC_DEFUN([ALL_CC_PYTHON],
 [ 
 m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.5 python2.4 python2.3])
+PYTHONS=''
 found_one=''
 _ONE_CC_PYTHON([=2.3], [2_3])
-if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
+if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
 unset PYTHON
 _ONE_CC_PYTHON([=2.4], [2_4])
-if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
+if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
 unset PYTHON
 _ONE_CC_PYTHON([=2.5], [2_5])
-if test -f "$PYTHON" ; then found_one=$PYTHON ; fi
+if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
 PYTHON=$found_one
 if ! test "$found_one" ; then
    AC_MSG_ERROR([No python development environments found])
