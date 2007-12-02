@@ -1,6 +1,54 @@
-2007-05-16  Loic Dachary  <loic@dachary.org>
+2007-12-02  Loic Dachary <loic@dachary.org>
 
 	* Release 135.0
+
+	* AUTHORS, Makefile.am, README, config/ccpython.m4, configure.ac,
+	  debian/copyright, pokereval.py, pypokereval.c, test.py: update
+	  copyrights
+	* Makefile.am: https://gna.org/support/index.php?1823 test case
+	* bug-1823.py: test that the comparison operator change of
+	  INNER_LOOP macro did not introduce an obvious problem
+	* pypokereval.c: compare double with > instead of ==
+
+2007-07-24  Loic Dachary <loic@dachary.org>
+
+	* config/ccpython.m4: cygwin hack is no longer necessary: it does
+	  not work anyways
+
+2007-06-15  Loic Dachary <loic@dachary.org>
+
+	* debian/control.gutsy, debian/control.lenny: lenny and gutsy
+	  support
+
+2007-05-16  Loic Dachary <loic@dachary.org>
+
+	* ChangeLog, NEWS, debian/changelog: Version bump.
+
+2007-02-14  Loic Dachary <loic@dachary.org>
+
+	* debian/control.feisty: feisty support
+
+2007-02-13  Loic Dachary <loic@dachary.org>
+
+	* config/ccpython.m4: detect 25 & unset cache
+
+2007-02-12  Loic Dachary <loic@dachary.org>
+
+	* debian/changelog: upstream sync
+	* debian/changelog: edgy fix
+	* debian/control.edgy: edgy needs pycentral for python2.5
+
+2006-11-20  cpinson
+
+	* gentoo/dev-games/pypoker-eval/pypoker-eval-132.0-r1.ebuild: down
+	* trunk/poker-eval/gentoo/dev-games/poker-eval/poker-eval-133.0-r1.ebuild,
+	  gentoo/dev-games/pypoker-eval/pypoker-eval-133.0-r1.ebuild: up
+
+2006-11-15  Loic Dachary <loic@dachary.org>
+
+	* debian/control, debian/control.breezy, debian/control.dapper,
+	  debian/control.edgy, debian/control.etch, debian/control.hoary,
+	  debian/control.sarge, debian/control.unstable: poker2.4 conflicts
 
 2006-10-29  Loic Dachary  <loic@dachary.org>
 
@@ -153,3 +201,6 @@ Sat Feb 21 12:56:11 2004  Loic Dachary  <loic@gnu.org>
 
 	* Initial revision
 
+Local Variables:
+compile-command: "svn update ; svn2cl --group-by-day --authors=$(echo $HOME)/.svn2cl --stdout | head -2000 | sed -n '0,/^2007-01-01/p'"
+End:
