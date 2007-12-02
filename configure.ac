@@ -1,4 +1,5 @@
 #
+# Copyright (C) 2007 Loic Dachary <loic@dachary.org>
 # Copyright (C) 2004, 2005, 2006 Mekensleep
 #
 # Mekensleep
@@ -21,7 +22,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 # Authors:
-#  Loic Dachary <loic@gnu.org>
+#  Loic Dachary <loic@dachary.org>
 # 
 
 # Process this file with autoconf to produce a configure script.
