@@ -1,5 +1,6 @@
 /*
  *
+ * Copyright (C) 2007 Loic Dachary <loic@dachary.org>
  * Copyright (C) 2004, 2005, 2006 Mekensleep
  *
  *	Mekensleep
@@ -163,7 +164,7 @@
         result->nsharehi[i][H]++;					\
         result->nsharelo[i][L]++;					\
         result->nshare[i][H][L]++;					\
-        if (potfrac == 1)						\
+        if (potfrac > 0.99)						\
           result->nscoop[i]++;						\
         result->ev[i] += potfrac;					\
       }									\
