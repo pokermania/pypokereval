@@ -61,8 +61,10 @@ pkgconfigdir = ${libdir}/pkgconfig
 pkgconfig_DATA = pypoker-eval.pc
 
 EXTRA_DIST = config/python.m4 config/ccpython.m4 \
-	test.py pypoker-eval.vcproj pypoker-eval.sln \
+	test.py \
+	bug-1823.py \
+	pypoker-eval.vcproj pypoker-eval.sln \
 	$(wildcard gentoo/dev-games/pypoker-eval/*.ebuild)
 
 TESTS_ENVIRONMENT = ${PYTHON}
-TESTS = test.py
+TESTS = test.py bug-1823.py
