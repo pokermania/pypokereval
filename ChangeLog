@@ -1,6 +1,10 @@
-2007-12-02  Loic Dachary <loic@dachary.org>
+2008-03-01  Loic Dachary <loic@dachary.org>
 
 	* Release 135.0
+
+	* Makefile.am, configure.ac: osx compilation fixes
+
+2007-12-02  Loic Dachary <loic@dachary.org>
 
 	* AUTHORS, Makefile.am, README, config/ccpython.m4, configure.ac,
 	  debian/copyright, pokereval.py, pypokereval.c, test.py: update
