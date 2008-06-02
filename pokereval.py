@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2007 Loic Dachary <loic@dachary.org>
+# Copyright (C) 2007, 2008 Loic Dachary <loic@dachary.org>
 # Copyright (C) 2004, 2005, 2006 Mekensleep
 #
 # Mekensleep
@@ -9,7 +9,7 @@
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
+# the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
@@ -139,9 +139,16 @@ won the low side.
 See the"poker_eval" method for a detailed
 explanation of the semantics of the arguments.
 
-If the keyword argument "fill_pockets" is set, remove any pocket
-hand that contains a place holder (i.e. 255 or __) or any empty
-pocket (i.e. []).
+If the keyword argument "fill_pockets" is set, pocket cards
+can contain a placeholder (i.e. 255 or __) that will be be
+used as specified in the "poker_eval" method documentation.
+
+If the keyword argument "fill_pockets" is not set, pocket cards
+that contain at least one placeholder (i.e. 255 or __) are
+ignored completly. For instance if winners is called as follows
+o.winners(game = 'holdem', pockets = [ [ '__', 'As' ], [ 'Ks', 'Kd'] ])
+it is strictly equivalent as calling
+o.winners(game = 'holdem', pockets = [ [ 'Ks', 'Kd'] ]).
 """
         index2index = {}
         normalized_pockets = []
