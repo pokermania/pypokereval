@@ -198,6 +198,12 @@ pockets   : list of pocket cards for each player still in game. Each member
             in the list is meaningfull for the value returned will refer to
             this position when stating which player wins, tie or loose.
             Example: [ ["tc", "ac"],  ["3h", "ah"],  ["8c", "6h"]]
+            Cards do not have to be real cards like "tc" or "4s". They may also be a 
+            placeholder, denoted by "__" or 255. When using placeholders, the 
+            keyword argument "iterations" can be specified to use Monte Carlo instead of
+            exhaustive exploration of all the possible combinations.
+            Example2: [ ["tc", "__"],  [255, "ah"],  ["8c", "6h"]]
+
             Mandatory, no default.
 
 board     : list of community cards, for games where this is meaningfull. If
