@@ -1,3 +1,9 @@
+2008-11-30  Bradley M. Kuhn  <bkuhn@ebb.org>
+
+	* config/python.m4 (AM_PATH_PYTHON): Added python2.6 support.
+
+	* config/ccpython.m4 (ALL_CC_PYTHON): Added python2.6 support.
+
 2008-03-01  Loic Dachary <loic@dachary.org>
 
 	* Release 135.0

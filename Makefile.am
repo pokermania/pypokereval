@@ -1,11 +1,8 @@
 #
 # Copyright (C) 2007, 2008 Loic Dachary <loic@dachary.org>
-# Copyright (C) 2004, 2005, 2006 Mekensleep
-#
-# Mekensleep
-# 24 rue vieille du temple
-# 75004 Paris
-#       licensing@mekensleep.com
+# Copyright (C)       2008 Bradley M. Kuhn <bkuhn@ebb.org>
+# Copyright (C) 2004, 2005, 2006 Mekensleep <licensing@mekensleep.com>
+#                                24 rue vieille du temple, 75004 Paris
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,6 +20,7 @@
 #
 # Authors:
 #  Loic Dachary <loic@dachary.org>
+#  Bradley M. Kuhn <bkuhn@ebb.org>
 #
 # 
 ACLOCAL_AMFLAGS = -I config
@@ -33,6 +31,14 @@ MAINTAINERCLEANFILES = INSTALL Makefile.in aclocal.m4 configure \
 pythondir = ${pyexecdir}
 python_PYTHON = \
 	pokereval.py
+
+if PYTHON_2_6
+py2_6exec_LTLIBRARIES = _pokereval_2_6.la
+_pokereval_2_6_la_SOURCES = pypokereval.c
+_pokereval_2_6_la_LDFLAGS = -module -no-undefined -version-info 1:0:0
+_pokereval_2_6_la_LIBADD = ${PYTHON2_6_LIBS} ${POKER_EVAL_LIBS}
+_pokereval_2_6_la_CFLAGS = ${PYTHON2_6_CFLAGS} ${POKER_EVAL_CFLAGS} -DPYTHON_VERSION=\"2_6\" -D'VERSION_NAME(w)=w\#\#2_6'
+endif
 
 if PYTHON_2_5
 py2_5exec_LTLIBRARIES = _pokereval_2_5.la
