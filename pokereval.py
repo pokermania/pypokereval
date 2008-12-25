@@ -200,7 +200,7 @@ pockets   : list of pocket cards for each player still in game. Each member
             Example: [ ["tc", "ac"],  ["3h", "ah"],  ["8c", "6h"]]
             Cards do not have to be real cards like "tc" or "4s". They may also be a 
             placeholder, denoted by "__" or 255. When using placeholders, the 
-            keyword argument "iterations" can be specified to use Monte Carlo instead of
+            keyword argument "iterations" may be specified to use Monte Carlo instead of
             exhaustive exploration of all the possible combinations.
             Example2: [ ["tc", "__"],  [255, "ah"],  ["8c", "6h"]]
 
