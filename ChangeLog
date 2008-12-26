@@ -1,6 +1,13 @@
-2008-12-25  Loic Dachary <loic@dachary.org>
+2008-12-26  Loic Dachary <loic@dachary.org>
 
 	* Release 136.0
+
+	* debian/control.edgy, debian/control.etch, debian/control.feisty,
+	  debian/control.gutsy: add g++ dependency for backport to obey the
+	  r5119 bkuhn AC_PROG_CXX addition
+	* ChangeLog, NEWS, debian/changelog: version bump to 136
+
+2008-12-25  Loic Dachary <loic@dachary.org>
 
 	* debian/copyright: license upgrade to GPLv3+
 	* COPYING, bug-1823.py, config/ccpython.m4, configure.ac,
