@@ -1,6 +1,6 @@
 2008-12-25  Loic Dachary <loic@dachary.org>
 
-	* Release 135.0
+	* Release 136.0
 
 	* debian/copyright: license upgrade to GPLv3+
 	* COPYING, bug-1823.py, config/ccpython.m4, configure.ac,
@@ -18,6 +18,8 @@
 	* config/ccpython.m4 (ALL_CC_PYTHON): Added python2.6 support.
 
 2008-03-01  Loic Dachary <loic@dachary.org>
+
+	* Release 135.0
 
 	* Makefile.am, configure.ac: osx compilation fixes
 
