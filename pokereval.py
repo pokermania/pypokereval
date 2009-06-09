@@ -59,10 +59,10 @@ meaning that the card is unknown.
     def best(self, side, hand, board = []):
         """\
 Return the best five card combination that can be made with the cards
-listed in "hand" and, optionaly, board. The "side" may be "hi" or
-"low". The "board" argument need only be provided for variants where
+listed in "hand" and, optionally, board. The "side" may be "hi" or
+"low". The "board" argument must only be provided for variants where
 knowing if a given card is taken from the board or not is significant
-(such as Omaha).
+(such as Omaha but not Holdem).
 
 A list is returned. The first element is the numerical value
 of the hand (better hands have higher values if "side" is "hi" and
