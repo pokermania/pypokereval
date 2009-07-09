@@ -28,6 +28,8 @@ $(DEB_SRCDIR)/configure:: $(DEB_SRCDIR)/configure.ac
 $(DEB_BUILDDIR)/config.status: $(DEB_SRCDIR)/configure
 	chmod a+x $(DEB_CONFIGURE_SCRIPT)
 	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
+common-install-arch::
+	find debian/python-pypoker-eval -name '*.la' | xargs rm
 
 binary-install/python-pypoker-eval::
 	-dh_pycentral -ppython-pypoker-eval
