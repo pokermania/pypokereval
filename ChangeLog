@@ -1,6 +1,22 @@
-2008-12-27  Loic Dachary  <loic@dachary.org>
+2009-07-09  Loic Dachary <loic@dachary.org>
 
 	* Release 137.0
+
+	* debian/rules: remove .la from distribution because it's not
+	  needed for python plugins
+	* debian/copyright: upgrade copyright notice to GPLv3
+	* debian/control: upgrade section to python, upgrade policy, add
+	  misc:Depends
+
+2009-06-09  Loic Dachary <loic@dachary.org>
+
+	* pokereval.py: improved documentation for the "best" method
+	  (courtesy tsr_)
+
+2008-12-27  Loic Dachary <loic@dachary.org>
+
+	* ChangeLog, NEWS, configure.ac, debian/changelog: bump to version
+	  137
 
 2008-12-26  Loic Dachary <loic@dachary.org>
 
