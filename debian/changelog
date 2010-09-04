@@ -1,14 +1,9 @@
-pypoker-eval (138.0-2) unstable; urgency=low
-
-  * recompile to accomodate for the change of available python versions in sid (closes: #549979)
-
- -- Loic Dachary (OuoU) <loic@debian.org>  Sat, 04 Sep 2010 07:19:28 +0200
-
 pypoker-eval (138.0-1) unstable; urgency=low
 
+  * recompile to accomodate for the change of available python versions in sid (closes: #549979)
   * upstream sync
 
- -- Loic Dachary (OuoU) <loic@debian.org>  Wed, 12 Aug 2009 18:08:27 +0200
+ -- Loic Dachary (OuoU) <loic@debian.org>  Sat, 04 Sep 2010 07:19:28 +0200
 
 pypoker-eval (137.0-1) unstable; urgency=low
 
