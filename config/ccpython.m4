@@ -110,7 +110,7 @@ AM_CONDITIONAL([PYTHON_]$2, [test "$have_python" != "no"])
 
 AC_DEFUN([ALL_CC_PYTHON],
 [ 
-m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.6 python2.5 python2.4 python2.3])
+m4_define([_AM_PYTHON_INTERPRETER_LIST], [python2.7 python2.6 python2.5 python2.4 python2.3])
 PYTHONS=''
 found_one=''
 _ONE_CC_PYTHON([=2.3], [2_3])
@@ -123,6 +123,9 @@ _ONE_CC_PYTHON([=2.5], [2_5])
 if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
 unset PYTHON
 _ONE_CC_PYTHON([=2.6], [2_6])
+if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
+unset PYTHON
+_ONE_CC_PYTHON([=2.7], [2_7])
 if test -f "$PYTHON" ; then found_one=$PYTHON ; PYTHONS="$PYTHON $PYTHONS" ; fi
 PYTHON=$found_one
 if ! test "$found_one" ; then
