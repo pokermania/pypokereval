@@ -1,3 +1,9 @@
+pypoker-eval (138.0-3) pokermania; urgency=low
+
+  * e6ff0c6 removed python-all dependency
+
+ -- Andor Goetzendorff <andor@pokermania.de>  Tue, 07 Aug 2012 00:42:14 +0200
+
 pypoker-eval (138.0-2) pokermania; urgency=low
 
   * updated to pokermania
